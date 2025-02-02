@@ -1,32 +1,17 @@
 import java.util.Scanner;
-public class demo018 {
-    
-    
-    
-        public static void main(String[] args) {
-            Scanner scanner = new Scanner(System.in);
-            
-           
-            System.out.print("Enter the number of minutes: ");
-            long totalMinutes = scanner.nextLong();
-            
-           
-            long minutesInAnHour = 60;
-            long hoursInADay = 24;
-            long daysInAYear = 365;
-            
-            long minutesInADay = minutesInAnHour * hoursInADay;
-            long minutesInAYear = minutesInADay * daysInAYear; 
-            
-           
-            long years = totalMinutes / minutesInAYear;
-            long remainingMinutesAfterYears = totalMinutes % minutesInAYear;
-            long days = remainingMinutesAfterYears / minutesInADay;
-            long remainingMinutes = remainingMinutesAfterYears % minutesInADay;
-            
-            
-            System.out.println(totalMinutes + " minutes is approximately " + years + " years, " + days + " days, and " + remainingMinutes + " minutes.");
-            
-            scanner.close();
-        }
+class Demo18{
+    public static void main(String[] args) {
+        Scanner scanner=new Scanner(System.in);
+       System.out.println("Enter the minutes: ");
+        int min=scanner.nextInt();
+        int minutesperyear= 525600;
+        int minutespermonth= 43800;
+        int Remainingmonths=min%minutesperyear;
+        int months=Remainingmonths/minutespermonth;
+        System.out.println("Years="+min/minutesperyear);
+        //System.out.println("Remainingmonths= "+Remainingmonths);
+        System.out.println("Months= "+months);
+        scanner.close();
+
+    }
 }
